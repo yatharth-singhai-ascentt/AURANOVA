@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif, Smooth sans-serif;
+}
+ 
+body {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #1a1b1e;
+ 
+    display: flex;
+    flex-direction: column;
+    color: #e0e0e0; /* Light text for dark theme */
+}
+ 
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+ 
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+ 
+/* Header Styles - Adjusted for dark theme */
+header {
+    background: rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 50px;
+}
+ 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+ 
+.logo {
+    display: flex;
+    align-items: center;
+}
+ 
+.logo img {
+    height: 30px;
+    width: 150px;
+    margin-right: 10px;
+}
+ 
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+ 
+.nav-links li {
+    margin: 0 20px;
+}
+ 
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif, Smooth sans-serif;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+}
+ 
+.nav-links a:hover {
+    color: #f38144;
+}
+ 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #f38144, transparent);
+    transition: width 0.3s ease;
+}
+ 
+.nav-links a:hover::after {
+    width: 100%;
+}
+ 
+/* Details Container - Modified for dark theme and left-aligned heading */
+.details-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    margin: 20px auto;
+    padding: 20px;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    height: 87%;
+    background: rgba(30, 30, 30, 0.719);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease;
+}
+ 
+.details-container h2 {
+    color: #f38144;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-align: left;
+    animation: slideUp 0.5s ease 0.3s both;
+    letter-spacing: 2px;
+    margin-left: 6px;
+}
+ 
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+    height: calc(100% - 60px);
+}
+ 
+.car-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 30%; /* Adjust the width as needed */
+}
+ 
+.car-info p {
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 1.4rem;
+    border-radius: 8px;
+    margin: 20px 2px 2px 2px ;
+    background: rgba(50, 50, 50, 0.5);
+    transition: all 0.3s ease;
+    animation: slideUp 0.5s ease calc(var(--delay) * 0.1s) both;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-size: 1.2rem; /* Increase the font size */
+}
+ 
+.car-info p:hover {
+    transform: translateX(10px);
+    background: rgba(70, 70, 70, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+ 
+.car-info strong {
+    color: #f38144;
+    margin-right: 0.8rem;
+    opacity: 0.9;
+}
+ 
+.model-viewer-container {
+    flex: 2;
+    position: relative;
+    background: rgba(40, 40, 40, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    height: 88%;
+    /* margin-bottom: 90px; */
+    /* width: 60%; Adjust the width as needed */
+}
+ 
+model-viewer {
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+ 
+.no-model {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #666;
+}
+ 
+/* Button Container - Adjusted for dark theme */
+.button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0 20px;
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+ 
+.back-button,
+.forward-button {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #f38144;
+    background-color: transparent;
+    border: 2px solid #f38144;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 120px;
+    text-align: center;
+}
+ 
+.back-button:hover,
+.forward-button:hover {
+    background-color: #f38144;
+    color: #121212;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 129, 68, 0.2);
+}
+ 
+/* Animation Keyframes */
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+ 
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+ 
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+ 
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+ 
+/* Error Message Styling */
+.details-container:only-child h2 {
+    color: #f38144;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+ 
+/* Responsive Design */
+@media (max-width: 968px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+ 
+    .car-info {
+        flex-direction: column;
+        padding-right: 0;
+        width: 100%; /* Adjust the width for smaller screens */
+    }
+ 
+    .model-viewer-container {
+        flex: 1;
+        min-height: 300px;
+    }
+}
+ 
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+ 
+    .details-container {
+        margin: 10px;
+        padding: 15px;
+    }
+ 
+    .nav-links li {
+        margin: 0 10px;
+    }
+ 
+    .logo img {
+        width: 120px;
+    }
+ 
+    .text {
+        font-size: 28px;
+    }
+ 
+    .button-container {
+        padding: 10px;
+    }
+ 
+    .back-button,
+    .forward-button {
+        padding: 8px 15px;
+        font-size: 14px;
+        min-width: 100px;
+    }
+}
+ 

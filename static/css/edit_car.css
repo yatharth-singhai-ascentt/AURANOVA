@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+ 
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+ 
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    height: 60px;
+}
+ 
+.logo {
+    width: 170px;
+    height: 30px;
+}
+ 
+.main-container {
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+    gap: 2rem;
+    top: 10px;
+}
+ 
+/* Tools Bar */
+.main-container .tools-bar {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+ 
+/* .main-container .tools-bar {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+} */
+ 
+.tool-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    text-decoration: none; /* Ensure the link doesn't have underline */
+}
+ 
+.tool-btn:hover {
+    background: #555; /* Optional: Add a hover effect */
+}
+ 
+.car-title h1 {
+    text-align: center;
+    margin-top: -5px;
+    font-size: 30px;
+    color: #d1c9c9;
+}
+ 
+.button-container {
+    position: fixed;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 520px;
+    z-index: 1000;
+    top: 90px;
+    bottom: 20px;
+}
+ 
+ 
+.back-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(240, 235, 235);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    top: 10px; /* Position above the toolbar */
+}
+.back-button:hover {
+    color: #f45328;
+    transform: scale(1.1);
+}
+ 
+.back-button:hover {
+    color: #f45328;
+    transform: scale(1.1);
+}
+ 
+.button-container1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0 20px;
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+ 
+.ar-btn,
+.down-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #f38144;
+    background-color: transparent;
+    border: 2px solid #f38144;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 120px;
+    text-align: center;
+}
+ 
+.ar-btn:hover,
+.down-btn:hover {
+    background-color: #f38144;
+    color: #121212;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 129, 68, 0.2);
+}
+ 
+ 
+ 
+#customization-panel {
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    height: 560px;
+    background: rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);  /* Darker background for contrast */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    transition: transform 0.3s ease-in-out;
+}
+ 
+/* General Styles for Sections */
+.color-section{
+    display: flex;
+    gap: 12px;
+}
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    flex: 1;
+}
+ 
+/* Section Labels */
+.color-section label,
+.option-group label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+ 
+/* Select, Input, and Button Styles */
+.color-section select,
+.color-section input,
+.color-section button {
+    padding: 0.8rem;
+    padding-right: 2rem;
+    background: #333;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #6a6969 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="white"/></svg>') no-repeat right 15px center;
+    background-size: 14px;
+    width: 100%;
+}
+ 
+.color-section select:hover,
+.color-section input:hover,
+.color-section button:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+ 
+/* View Buttons Section - Interior,Exterior,Apply and Reset */
+.view-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+ 
+.view-buttons button {
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+ 
+.view-buttons button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+ 
+ 
+.view-buttons1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+   
+}
+.view-buttons1 button {
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 105px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.view-buttons1 button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+ 
+ 
+ 
+/* Apply specific colors to buttons */
+button#view-interior {
+    background-color: #6a6969;
+}
+ 
+button#view-interior:hover {
+    background-color: black;
+}
+ 
+button#view-exterior {
+    background-color: #6a6969;
+}
+ 
+button#view-exterior:hover {
+    background-color: black;
+}
+ 
+button#apply-color {
+    background-color: #6a6969;
+}
+ 
+button#apply-color:hover {
+    background-color: black;
+}
+ 
+button#reset-colors {
+    background-color: #6a6969;
+}
+ 
+button#reset-colors:hover {
+    background-color: black;
+}
+ 
+/* Section for Select Part and Camera Angle Side by Side */
+.select-part-camera {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* flex-wrap: wrap; */
+}
+ 
+/* Section for Background Color and Color Picker Side by Side */
+.color-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    /* flex-wrap: wrap; */
+}
+ 
+.option-group {
+    flex: 1;
+}
+ 
+/* Circular Color Picker */
+.circular-color-picker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.circular-color-picker input[type="color"] {
+    appearance: none;
+    width: 70%;
+    height: 70%;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+}
+ 
+.circular-color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 50%;
+}
+ 
+.circular-color-picker input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+ 
+/* Section for Apply and Reset Buttons Side by Side */
+.color-section button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 45%;
+}
+ 
+.color-section button#reset-colors {
+    background-color: #f44336;
+}
+ 
+.color-section button:hover {
+    opacity: 0.8;
+}
+ 
+/* Section for Select Part and Camera Angle */
+.option-group select {
+    padding: 0.8rem;
+    padding-right: 2rem;
+    background: #333;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #6a6969 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="white"/></svg>') no-repeat right 15px center;
+    background-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+}
+ 
+.option-group select:focus {
+    outline: 2px solid #666;
+}
+ 
+/* Canvas Container */
+#canvas-container {
+    flex: 1;
+    max-width: 75%;
+    max-height: 75vh;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    #customization-panel {
+        width: 250px;
+    }
+ 
+    .select-part-camera {
+        flex-direction: column;
+        gap: 12px;
+    }
+ 
+    .color-section {
+        flex-direction: column;
+    }
+}

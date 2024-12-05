@@ -1,0 +1,212 @@
+/* Import Common Styles */
+@import 'style.css';
+ 
+/* Import Google Font for Navbar and Contact Page */
+/* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); */
+ 
+/* General Navigation Styles */
+.contact-page .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+ 
+.contact-page .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f38144;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ; /* Apply Audiowide font to logo */
+}
+ 
+.logo img {
+    height: 30px;
+    width: 150px;
+    margin-right: 10px;
+}
+ 
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+ 
+.nav-links li {
+    margin: 0 20px;
+}
+ 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+ 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f38144;
+    transition: width 0.3s ease;
+}
+ 
+.nav-links a:hover {
+    color: #f38144;
+}
+ 
+.nav-links a:hover::after {
+    width: 100%;
+}
+ 
+/* Hero Section Styling */
+.contact-page .hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(95, 93, 93, 0.7), rgba(81, 78, 78, 0.7)), url('../images/herobg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+.contact-page .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+ 
+.contact-page .hero-content {
+    position: relative;
+    z-index: 2;
+}
+/* Contact Section Styling */
+.contact-section {
+    padding: 80px 50px;
+    background: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+    min-height: calc(100vh - 200px);
+}
+ 
+/* Contact Form Container */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgba(76, 75, 75, 0.7), rgba(0, 0, 0, 0.8)), url('your-background-image.jpg');
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.contact-hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+ 
+.contact-hero h1 {
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+   
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: transparent;
+    background-image: linear-gradient(45deg, #ff6a00, #ffffff);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: diagonalMove 3s ease infinite;
+}
+ 
+.contact-hero p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+    color: white;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+    text-align: center;
+}
+ 
+ 
+/* Form Group */
+.form-group {
+    margin-bottom: 25px;
+}
+ 
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ; /* Apply Audiowide font to labels */
+    text-align: left;
+}
+ 
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.233);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ; /* Apply Audiowide font to input fields */
+}
+ 
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f3444d;
+    background: rgba(255, 255, 255, 0.2);
+}
+ 
+/* Textarea Customization */
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+ 
+/* Submit Button Styling */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #f38144;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ; /* Apply Audiowide font to button */
+}
+ 
+.submit-btn:hover {
+    background: #e06a35;
+    transform: translateY(-2px);
+}
+ 
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .contact-page .nav {
+        flex-direction: column;
+    }
+ 
+    .contact-page .nav-links {
+        flex-direction: column;
+    }
+ 
+    .contact-container {
+        padding: 20px;
+    }
+}

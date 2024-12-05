@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+}
+ 
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    background-image: url('/static/images/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+header {
+    background: rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 50px;
+}
+ 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.logo {
+    display: flex;
+    align-items: center;
+}
+ 
+.logo img {
+    height: 30px;
+    width: 150px;
+    margin-right: 10px;
+}
+ 
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+ 
+.nav-links li {
+    margin: 0 20px;
+}
+ 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 18px;
+}
+ 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f38144;
+    transition: width 0.3s ease;
+}
+ 
+.nav-links a:hover {
+    color: #f38144;
+}
+ 
+.nav-links a:hover::after {
+    width: 100%;
+}
+ 
+.index-hero {
+    text-align: left;
+    padding: 100px 50px;
+    position: relative;
+}
+ 
+.index-hero  h1 {
+    position: absolute;
+    top: 115%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: 'Arial', sans-serif, Smooth sans-serif;
+    font-size: 35px;
+    margin: 0;
+    color: transparent;
+    background-image: linear-gradient(45deg, #ff6a00, #ffffff);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: diagonalMove 3s ease infinite;
+    white-space: nowrap;
+}
+ 
+ 
+@keyframes diagonalMove {
+    0% { background-position: 100% 0; }
+    50% { background-position: 0 100%; }
+    100% { background-position: 100% 0; }
+}
+ 
+.learn-more {
+    padding: 12px 30px;
+    background: #f38144;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+ 
+.learn-more:hover {
+    background: #5d1ee6;
+    transform: translateY(-2px);
+}
+ 
+.car-search-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ 
+.search-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.search-field {
+    flex: none;
+    margin: 0;
+    /* min-width: 200px; */
+}
+ 
+.search-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: white;
+    text-align: left;
+}
+ 
+.search-field input {
+    /* width: 150px; */
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+ 
+.search-field input:focus {
+    border-color: #f38144;
+    box-shadow: 0 0 5px rgba(75, 13, 186, 0.5);
+}
+ 
+.search-btn {
+    padding: 10px 15px;
+    background: rgb(51, 50, 50);
+    color: white;
+    border:#1a1a1a;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    margin-top: 24px;
+}
+ 
+.search-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    color: black;
+}
+ 
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+ 
+.features-section {
+    padding: 80px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    background-color: #262525;
+    color: white;
+}
+ 
+.feature-card {
+    background: rgba(160, 153, 153, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ 
+ 
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+ 
+.feature-card h3 {
+    color: white;
+    margin: 15px 0;
+    font-size: 20px;
+}
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+ 
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #f38144;
+}
+ 
+.car_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+}
+ 
+.car_icon i {
+    height: 80px;
+    width: 100px;
+    margin-right: 10px;
+}
+ 
+.custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+}
+ 
+.custom svg {
+    height: 80px;
+    width: 100px;
+    margin-right: 10px;
+}
+ 
+.visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+}
+ 
+.visual svg {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+}
+ 
+ 
+ 
+footer {
+    background: black;
+    color: white;
+    padding: 50px 20px 20px;
+}
+ 
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+ 
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+ 
+.contact-info {
+    margin: 20px 0;
+}
+ 
+.contact-info p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+ 
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+ 
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+   
+    .nav-links {
+        display: none;
+    }
+   
+    .hero-content h1 {
+        font-size: 32px;
+    }
+   
+    .search-container {
+        flex-direction: column;
+    }
+   
+    .features-section {
+        padding: 40px 20px;
+    }
+ 
+    .key-features {
+        padding: 40px 20px;
+    }
+ 
+    .feature-item h3 {
+        font-size: 20px;
+    }
+ 
+    .footer-content {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 18px;
+        left: 10%;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ 
+.feature-card, .feature-item {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+ 
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+ 
+@media (max-width: 768px) {
+    .about-page .hero-content h1 {
+        font-size: 2.5rem;
+    }
+ 
+    .about-page .hero-content h3 {
+        font-size: 1.2rem;
+    }
+ 
+    .about-page .hero-content p {
+        font-size: 1rem;
+        margin: 15px auto;
+    }
+ 
+    .mission-content h2 {
+        font-size: 28px;
+    }
+ 
+    .mission-content p {
+        font-size: 16px;
+    }
+ 
+    .about-page .mission-section {
+        padding: 40px 10px;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .about-section,
+    .team-section,
+    .contact-section {
+        padding: 40px 20px;
+    }
+ 
+    .mission-content {
+        padding: 0 20px;
+    }
+ 
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+ 
+    .contact-container {
+        padding: 20px;
+        margin: 0 20px;
+    }
+ 
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+}
+.mission-content,
+.team-member,
+.contact-container {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

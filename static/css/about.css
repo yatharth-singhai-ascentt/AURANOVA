@@ -1,0 +1,239 @@
+/* Import Common Styles */
+/* @import 'style.css'; */
+ 
+/* General Navigation Styles */
+.about-page .nav {
+    display: flex;
+    justify-content: space-between; /* Spaces items between the left, center, and right */
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.about-page .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f38144;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+}
+ 
+.logo img {
+    height: 30px;
+    width: 150px;
+    margin-right: 10px;
+}
+ 
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+ 
+.nav-links li {
+    margin: 0 20px;
+}
+ 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+ 
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f38144;
+    transition: width 0.3s ease;
+}
+ 
+.nav-links a:hover {
+    color: #f38144;
+}
+ 
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* About Page Styles */
+.about-page .hero-section {
+    min-height: 90vh;
+    background: linear-gradient(rgba(120, 119, 119, 0.7), rgba(16, 23, 2, 0)), url('../images/herobg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+.hero-content .head{
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: transparent;
+    background-image: linear-gradient(45deg, #ff6a00, #ffffff);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: diagonalMove 3s ease infinite;
+}
+ 
+.about-section {
+    padding: 80px 50px;
+    background: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+    color: white;
+}
+ 
+.about-page .key-features{
+    background-color: #414141;
+ 
+}
+ 
+.key-features {
+    padding: 80px 50px;
+    text-align: center;
+    /* background-image: black; */
+    color: white;
+}
+ 
+.key-features h2 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 600;
+}
+ 
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+ 
+.feature-item {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ 
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+ 
+.feature-item h3 {
+    color: white;
+    margin: 15px 0;
+    font-size: 20px;
+}
+ 
+.feature-item p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+ 
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+ 
+.mission-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+}
+ 
+.mission-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+ 
+/* Hero Section Styling */
+.about-page .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('your-background-image.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    max-width: 100%;
+    overflow: hidden;
+}
+ 
+.about-page .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+ 
+.about-page .hero-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-style: italic;
+}
+ 
+.about-page .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+    text-align: justify;
+}
+ 
+.about-page .hero-content strong {
+    font-weight: 700;
+    color: #f38144;
+}
+ 
+.about-page .hero-content br {
+    margin-bottom: 10px;
+}
+ 
+/* Mission Section Updates */
+.about-page .mission-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #5d1ee6; /* Adjusted for a different visual contrast */
+    color: white;
+}
+ 
+.about-page .mission-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif, Smooth sans-serif ;
+    text-transform: capitalize;
+}
+ 
+.about-page .mission-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+ 
+/* Subtle Animation on Hero Section */
+.about-page .hero-content:hover {
+    opacity: 0.95;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transform: scale(1.01);
+}
