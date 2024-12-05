@@ -1,0 +1,4 @@
+Flask==2.2.3
+Flask-PyMongo==2.3.0
+pymongo==4.1.1
+qrcode
