@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+{% block content %}
+<body class="about-page">
+    <div class="hero-section">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/ascentt.jpg') }}" alt="Auranova Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero-content">
+            <div class="head">
+                <h1>About AURANOVA</h1>
+            </div>
+            <h3>Revolutionizing the Future of Car Customization</h3>
+            <br>
+            <p><strong>AURANOVA</strong> is revolutionizing the world of car customization by offering an innovative platform that allows users to virtually design and personalize the exterior of their cars using Augmented Reality (AR).</p>
+            <p>Our platform lets you experiment with different colors, designs, and accessories for your car's exterior in a fully interactive 3D environment. With AURANOVA, you can visualize your customization ideas in real-time, simulating how your car will look with various modifications before making any physical changes.</p>
+            <p>AURANOVA brings your vision to life—offering an immersive, user-friendly experience that lets you create the perfect exterior design for your vehicle.</p>
+        </div>
+    </div>
+ 
+    <section class="key-features">
+        <h2>Our Mission</h2>
+        <p>At AURANOVA, we're revolutionizing the future of car customization through cutting-edge technology and innovative solutions.</p>
+ 
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>3D Visualization</h3>
+                <p>Experience your car modifications in real-time 3D before making any changes.</p>
+            </div>
+ 
+            <div class="feature-item">
+                <h3>Smart Customization</h3>
+                <p>AI-powered recommendations for the perfect customization options for your vehicle.</p>
+            </div>
+ 
+            <div class="feature-item">
+                <h3>Expert Support</h3>
+                <p>Our team of automotive experts is available 24/7 to guide you through the customization process.</p>
+            </div>
+ 
+            <div class="feature-item">
+                <h3>Quality Assurance</h3>
+                <p>Every modification is tested and certified for safety and performance.</p>
+            </div>
+        </div>
+    </section>
+</body>
+{% include 'footer.html' %}
+{% endblock %}

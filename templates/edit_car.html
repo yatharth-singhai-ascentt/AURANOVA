@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car - {{ car['Brand'] }} {{ car['Model'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_car.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-left">
+            <img src="{{ url_for('static', filename='images/ascentt.jpg') }}" alt="Logo" class="logo">
+        </div>
+        <div class="car-title">
+            <h1>Customize Your {{ car['Brand'] }} {{ car['Model'] }}</h1>
+        </div>
+    </nav>
+    <div class="button-container">
+        <button class="back-button" onclick="window.history.back()">« BACK</button>
+    </div>
+    <div class="main-container">
+        <div class="tools-bar">
+            <button class="tool-btn" title="Rotate"><span>360°</span></button>
+            <button class="tool-btn" title="Settings">⚙️</button>
+            <button class="tool-btn" title="Colors">🎨</button>
+            <button class="tool-btn" title="Camera">📷</button>
+        </div>
+        <div class="button-container1">
+            <button id="download-button" class="down-btn" onclick="downloadCar()">View in AR</button>
+        </div>
+        <div id="canvas-container" data-model-path="{{ url_for('static', filename=car['glb_file_path']) }}"></div>
+    </div>
+    <div id="customization-panel">
+        <div class="view-buttons1">
+            <button id="view-interior">Interior</button>
+            <button id="view-exterior">Exterior</button>
+        </div>
+        <!-- Dropdowns Stacked Vertically -->
+        <div class="select-part-camera">
+            <div class="option-group">
+                <label>Select Part:</label>
+                <select id="part-selector">
+                    <option value="body">Car Body</option>
+                    <option value="rims">Wheel Rims</option>
+                    <option value="interior">Interior</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label for="camera-angle">Camera Angle:</label>
+                <select id="camera-angle">
+                    <option value="default">Default</option>
+                    <option value="front">Front</option>
+                    <option value="side">Side</option>
+                    <option value="top">Top</option>
+                </select>
+            </div>
+        </div>
+        <!-- Color Pickers Side by Side -->
+        <div class="color-section">
+            <div class="option-group">
+                <label for="bg-color-picker">BG Color:</label>
+                <div class="circular-color-picker">
+                    <input type="color" id="bg-color-picker" value="#f38144" title="Pick a background color">
+                </div>
+            </div>
+            <div class="option-group">
+                <label for="color-picker">Color:</label>
+                <div class="circular-color-picker">
+                    <input type="color" id="color-picker" value="#f38144" title="Pick a color">
+                </div>
+            </div>
+        </div>
+        <div class="view-buttons">
+            <button id="apply-color">Apply Color</button>
+            <button id="reset-colors">Reset Colors</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/GLTFExporter.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
